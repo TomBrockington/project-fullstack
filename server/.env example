@@ -1,0 +1,5 @@
+PORT=4000
+DATABASE_URL="?schema=prisma"
+SHADOW_DATABASE_URL="postgres://ixwkwqoc:f-q-c3G2YOYIv9gbkNBJuduEf-YiSS68@lucky.db.elephantsql.com/ixwkwqoc?schema=shadow"
+JWT_SECRET="somesecurestring"
+JWT_EXPIRY="24h"
