@@ -1,7 +1,7 @@
 # project-fullstack
 
 ## Goals 
--intergrate skills learned from team-dev
+- intergrate skills learned from team-dev
 - master useContext and useNavigate 
 - write in clean reuseable code
 - develop domain file
