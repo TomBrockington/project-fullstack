@@ -8,7 +8,7 @@ const hashRate = 8
 const { findUsers, findUserByEmail, createUser } = require('../domain/users')
 
 const getAllUsers = async (req, res) => {
-    console.log('gettin all items')
+    console.log('gettin all users')
     try {
 
         const foundUsers = await findUsers()

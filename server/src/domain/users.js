@@ -3,7 +3,7 @@ const prisma = require("../utils/prisma");
 
 const findUsers = () => prisma.user.findMany({
     include: {
-        items: true
+        profile: true
     }
 })
 
