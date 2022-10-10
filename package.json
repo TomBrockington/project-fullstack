@@ -1,0 +1,20 @@
+{
+  "name": "project-fullstack",
+  "version": "1.0.0",
+  "description": "-intergrate skills learned from team-dev\r - master useContext and useNavigate \r - write in clean reuseable code\r - develop domain file",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TomBrockington/project-fullstack.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TomBrockington/project-fullstack/issues"
+  },
+  "homepage": "https://github.com/TomBrockington/project-fullstack#readme"
+}
