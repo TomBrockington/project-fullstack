@@ -13,6 +13,15 @@ const findUserByEmail = (email) => prisma.user.findFirst({
     }
 })
 
+const findUserById = (id) => prisma.user.findFirst({
+    where: {
+        id: id
+    },
+    include: {
+        profile: true
+    }
+})
+
 const createUser = (lowerCaseEmail, hashedPassword) => prisma.user.create({
     data: {
         email: lowerCaseEmail,
@@ -23,5 +32,6 @@ const createUser = (lowerCaseEmail, hashedPassword) => prisma.user.create({
 module.exports = {
     findUsers,
     findUserByEmail,
-    createUser
+    createUser,
+    findUserById
 }
