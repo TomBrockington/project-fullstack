@@ -16,6 +16,7 @@ model User {
   email    String   @unique
   password String   @db.VarChar(250)
   profile  Profile?
+  posts    Post[]
 }
 
 model Profile {
@@ -24,4 +25,11 @@ model Profile {
   bio      String
   userId   Int    @unique
   user     User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model Post {
+  id      Int    @id @default(autoincrement())
+  content String @db.VarChar(500)
+  userId  Int
+  user    User   @relation(fields: [userId], references: [id], onDelete: Cascade)
 }

@@ -21,6 +21,13 @@ async function seed() {
     },
   });
 
+  const createPost = await prisma.post.create({
+    data: {
+      userId: createdUser.id,
+      content: 'maximus power posting',
+    },
+  });
+
   const createdUser2 = await prisma.user.create({
     data: {
       email: 'jerry@email.com',
@@ -36,6 +43,13 @@ async function seed() {
     },
   });
 
+  const createPost2 = await prisma.post.create({
+    data: {
+      userId: createdUser2.id,
+      content: ' power posting',
+    },
+  });
+
   const createdUser3 = await prisma.user.create({
     data: {
       email: 'thirdicus@email.com',
@@ -48,6 +62,13 @@ async function seed() {
       userId: createdUser3.id,
       fullName: 'john the third',
       bio: 'loves the simpsons',
+    },
+  });
+
+  const createPost3 = await prisma.post.create({
+    data: {
+      userId: createdUser3.id,
+      content: 'bad posting',
     },
   });
 
