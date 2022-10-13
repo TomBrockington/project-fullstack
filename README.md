@@ -1,5 +1,4 @@
 # project-fullstack
-
 ## Goals 
 - intergrate skills learned from team-dev
 - master useContext and useNavigate 
@@ -11,3 +10,6 @@
 - profile pages
 - expandable comments sections
 - authentication/loggedIn status
+
+## next step
+- check for logged in user

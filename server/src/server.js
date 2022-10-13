@@ -15,6 +15,7 @@ app.use(express.urlencoded({ extended: true }));
 const userRouter = require('./routers/users');
 
 app.use('/users', userRouter)
+app.use('/', userRouter)
 
 app.get('*', (req, res) => {
     res.json({ ok: true });

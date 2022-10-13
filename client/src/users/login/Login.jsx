@@ -24,7 +24,7 @@ function Login() {
     event.preventDefault()
     console.log('login clicked');
 
-    const res = await fetch('http://localhost:4000/users/login', {
+    const res = await fetch('http://localhost:4000/login', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
