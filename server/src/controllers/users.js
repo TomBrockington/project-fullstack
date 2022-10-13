@@ -58,7 +58,7 @@ const createNewUser = async (req, res) => {
 };
 
 const getUserById = async (req, res) => {
-  console.log('get user by id');
+  console.log('get user by idx');
   const id = Number(req.params.id);
 
   try {
