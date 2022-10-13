@@ -10,4 +10,4 @@
 - light and dark mode
 - profile pages
 - expandable comments sections
-- authentication/loggedIn status 
+- authentication/loggedIn status

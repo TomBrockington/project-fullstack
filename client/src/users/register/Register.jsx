@@ -16,7 +16,7 @@ function Register() {
     const { email, password } = user;
     // connect to the API i set up in server under route below
       // can i change stringify to just user
-    const res = await fetch('http://localhost:4000/register', {
+    const res = await fetch('http://localhost:4000/users', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
