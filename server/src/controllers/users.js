@@ -3,6 +3,8 @@ const prisma = require('../utils/prisma');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 
+const { createAccessToken, createRefreshToken } = require('./auth');
+
 const hashRate = 8;
 
 const {
@@ -85,8 +87,48 @@ const editUserById = async (req, res) => {
     if (!foundUser) {
       return res.status(404).json({ error: { msg: 'User not found' } });
     }
+    
   } catch (error) {
     res.status(500).json({ error: { msg: '500 Fail' } });
+  }
+};
+
+const login = async (req, res) => {
+  console.log('logging you in');
+
+  const { email, password } = req.body;
+  console.log('req.body', req.body);
+
+  try {
+    // check if user exists
+    // WHEN WE FIND THE USER IT FINDS THEIR HASHED PASSEDWORD IN THE DB
+    const foundUser = await prisma.user.findFirst({
+      where: {
+        email,
+      },
+    });
+
+    if (!foundUser)
+      return res.status(404).json({ error: 'User does not exist ' });
+    console.log('found user', foundUser);
+    console.log('found user id', foundUser.id);
+
+    // compare passworded entered and hashed password in db
+    const passwordsMatch = await bcrypt.compare(password, foundUser.password);
+    console.log('passwordsMatch', passwordsMatch);
+
+    if (!passwordsMatch) {
+      return res.status(401).json({ error: 'Invalid password.' });
+    }
+
+    const accessToken = createAccessToken(foundUser.id, foundUser.email);
+
+    // const refreshToken = createRefreshToken(foundUser.email)
+    // user.refreshToken = refreshToken
+
+    res.status(200).json({ data: accessToken });
+  } catch (error) {
+    console.log('error', error);
   }
 };
 
@@ -96,4 +138,5 @@ module.exports = {
   createNewUser,
   editUserById,
   getUserById,
+  login
 };
