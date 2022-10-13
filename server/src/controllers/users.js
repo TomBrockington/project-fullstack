@@ -90,6 +90,7 @@ const editUserById = async (req, res) => {
   }
 };
 
+
 module.exports = {
   getAllUsers,
   createNewUser,
