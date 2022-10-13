@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 
-import {UserContext} from '../../context/UserContext' 
+import { UserContext } from '../../context/UserContext' 
 console.log('userCon', UserContext);
 
 function Home() {
@@ -9,7 +9,7 @@ function Home() {
 
   return (
     <div>
-      home
+      the answer is {user.user.email}
     </div>
   )
 }
